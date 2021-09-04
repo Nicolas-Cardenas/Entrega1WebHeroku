@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "3e010771-0be4-4082-baab-e0de85216ef1",
+		"name": "paradas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paradas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/paradas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paradas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parada id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/paradas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paradas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ciudad\": \"Bogota\",\r\n    \"direccion\": \"cll 26 # 6 - 50\",\r\n    \"coordenadaX\": 13.002,\r\n    \"coordenadaY\": -0.005\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/paradas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paradas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "parada",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ciudad\": \"Cartagena\",\r\n    \"direccion\": \"carrera 15 # 8 - 20\",\r\n    \"coordenadaX\": -10.02,\r\n    \"coordenadaY\": 62.05\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/paradas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paradas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/paradas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paradas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

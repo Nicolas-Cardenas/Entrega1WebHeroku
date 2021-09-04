@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "dc9281fe-dfa4-4ff3-960b-9633550b6ae5",
+		"name": "viaje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viajes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjMwNjM3NDMzLCJleHAiOjE2MzA3MjM4MzN9.3ACU2nJu2fPsLobNzlAnfY98Kt5IlMjTmKGOHjUKoCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/viajes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"viajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viaje id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjMwNjM3NDMzLCJleHAiOjE2MzA3MjM4MzN9.3ACU2nJu2fPsLobNzlAnfY98Kt5IlMjTmKGOHjUKoCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/viajes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"viajes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viaje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjMwNjM3NDMzLCJleHAiOjE2MzA3MjM4MzN9.3ACU2nJu2fPsLobNzlAnfY98Kt5IlMjTmKGOHjUKoCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"10-01-2021\",\r\n    \"direccion\": \"cll 26 # 6 - 50\",\r\n    \"precio\": 10000,\r\n    \"tiempo\": 1,\r\n    \"terminado\": false,\r\n    \"numCupos\": 5,\r\n    \"lleno\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/viajes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"viajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viaje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjMwNjM3NDMzLCJleHAiOjE2MzA3MjM4MzN9.3ACU2nJu2fPsLobNzlAnfY98Kt5IlMjTmKGOHjUKoCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"08-08-2020\",\r\n    \"direccion\": \"diag 3 # 6 - 50\",\r\n    \"precio\": 12000,\r\n    \"tiempo\": 3,\r\n    \"terminado\": true,\r\n    \"numCupos\": 3,\r\n    \"lleno\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/viajes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"viajes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viaje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjMwNjM3NDMzLCJleHAiOjE2MzA3MjM4MzN9.3ACU2nJu2fPsLobNzlAnfY98Kt5IlMjTmKGOHjUKoCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/viajes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"viajes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

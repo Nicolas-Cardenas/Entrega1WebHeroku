@@ -6,9 +6,17 @@ const { Conductor } = require("../models/relaciones");
 const checkToken = require("../jwt/checkToken");
 
 router.get("/", checkToken, function (req, res) {
-  Conductor.findAll().then((result) => {
-    res.send(result);
-  });
+  if (req.query.correo !== undefined) {
+    let correo = req.query.correo;
+    let contrasena = req.query.contrasena;
+    Conductor.findOne({ where: { correo, contrasena } }).then((result) => {
+      res.send(result);
+    });
+  } else {
+    Conductor.findAll().then((result) => {
+      res.send(result);
+    });
+  }
 });
 
 router.post("/", checkToken, function (req, res) {
@@ -43,8 +51,7 @@ router.put("/:id", checkToken, (req, res) => {
     (response) => {
       if (response[0] !== 0) {
         res.send("Conductor actualizado.");
-      }
-      else {
+      } else {
         res.status(404).send("No se encuentra el Conductor.");
       }
     },
@@ -59,8 +66,7 @@ router.delete("/:id", checkToken, (req, res) => {
   }).then((response) => {
     if (response === 1) {
       res.status(204).send();
-    }
-    else {
+    } else {
       res.status(404).send("No se encuentra el Conductor.");
     }
   });
@@ -75,7 +81,7 @@ const validacion = (conductor) => {
     correo: Joi.string().required(),
     contrasena: Joi.string().min(5).max(15).required(),
     edad: Joi.number().required(),
-    foto: Joi.string().required()
+    foto: Joi.string().required(),
   });
   return schema.validate(conductor);
 };

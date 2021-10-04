@@ -6,9 +6,17 @@ const { Pasajero } = require("../models/relaciones");
 const checkToken = require("../jwt/checkToken");
 
 router.get("/", checkToken, function (req, res) {
-  Pasajero.findAll().then((result) => {
-    res.send(result);
-  });
+  if (req.query.correo !== undefined) {
+    let correo = req.query.correo;
+    let contrasena = req.query.contrasena;
+    Pasajero.findOne({ where: { correo, contrasena } }).then((result) =>
+      res.send(result),
+    );
+  } else {
+    Pasajero.findAll().then((result) => {
+      res.send(result);
+    });
+  }
 });
 
 router.post("/", checkToken, function (req, res) {
@@ -43,8 +51,7 @@ router.put("/:id", checkToken, (req, res) => {
     (response) => {
       if (response[0] !== 0) {
         res.send("Pasajero actualizado.");
-      }
-      else {
+      } else {
         res.status(404).send("No se encuentra el Pasajero.");
       }
     },
@@ -59,8 +66,7 @@ router.delete("/:id", checkToken, (req, res) => {
   }).then((response) => {
     if (response === 1) {
       res.status(204).send();
-    }
-    else {
+    } else {
       res.status(404).send("No se encuentra el Pasajero.");
     }
   });

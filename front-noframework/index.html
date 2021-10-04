@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TeLlevo.com</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/main.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header">
+        <nav class="navbar navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img
+                src="./imagenes/logocarro.png"
+                width="60"
+                height="50"
+                alt=""
+              />
+            </a>
+            <a class="navbar-brand" href="#">
+              <img
+                src="./imagenes/logoletras.png"
+                width="100%"
+                height="50"
+                alt=""
+              />
+            </a>
+            <div class="collapse navbar-collapse"></div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-e"></ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item" id="numeroItems">
+                <button class="navbar brand" id="Registrarse">
+                  Registrarse
+                </button>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item" id="numeroItems">
+                <button class="navbar brand" id="InicioSesion">
+                  Iniciar sesión
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="row imagen">
+        <img
+          src="./imagenes/main.png"
+          id="mainImagen"
+          width="100%"
+          height="300px"
+          alt=""
+        />
+      </div>
+      <div class="row form">
+        <div class="col-1"></div>
+        <div class="col-12">
+          <form class="needs-validation" novalidate id="formMain">
+            <div class="row form">
+              <div class="col-md-5 mb-3">
+                <label for="validationCustom01" id="origen">Origen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  placeholder="Origen"
+                  value=""
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-5 mb-3">
+                <label for="validationCustom02" id="destino">Destino</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom02"
+                  placeholder="Destino"
+                  value=""
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+            <div class="row form">
+              <div class="col-md-4 mb-3">
+                <label for="validationCustom03" id="fecha">Fecha</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom03"
+                  placeholder="Fecha"
+                  required
+                />
+                <div class="invalid-feedback">Please provide a date.</div>
+              </div>
+              <div class="col-md-2 mb-3">
+                <br />
+                <label
+                  class="mr-sm-2"
+                  for="inlineFormCustomSelect"
+                  id="pasajeros"
+                  >Pasajeros</label
+                >
+                <select
+                  class="custom-select mr-sm-2"
+                  id="inlineFormCustomSelect"
+                >
+                  <option selected>Choose...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="3">4</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary" type="submit" id="buscarForm">
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              "use strict";
+              window.addEventListener(
+                "load",
+                function () {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms =
+                    document.getElementsByClassName("needs-validation");
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(
+                    forms,
+                    function (form) {
+                      form.addEventListener(
+                        "submit",
+                        function (event) {
+                          if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                          }
+                          window.location.href = "./busquedaViajes.html";
+                          form.classList.add("was-validated");
+                        },
+                        false,
+                      );
+                    },
+                  );
+                },
+                false,
+              );
+            })();
+          </script>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row Subtitulo">
+        <h1 id="populares">Destinos Populares</h1>
+      </div>
+      <br />
+      <div class="row Cards">
+        <div class="col-3 d-flex justify-content-center">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./imagenes/cali.jpg"
+              alt="Card image cap"
+              id="caliImg"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Cali</h3>
+              <br />
+              <a
+                href="./busquedaViajes.html"
+                class="btn btn-primary"
+                id="buscarCardCali"
+                >Buscar</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./imagenes/medellin.jpg"
+              alt="Card image cap"
+              id="medellinImg"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Medellin</h3>
+              <br />
+              <a
+                href="./busquedaViajes.html"
+                class="btn btn-primary"
+                id="buscarCardMedellin"
+                >Buscar</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./imagenes/cartagena.jpg"
+              alt="Card image cap"
+              id="cartagenaImg"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Cartagena</h3>
+              <br />
+
+              <a
+                href="./busquedaViajes.html"
+                class="btn btn-primary"
+                id="buscarCardCartagena"
+                >Buscar</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="./imagenes/bogota.jpg"
+              alt="Card image cap"
+              id="bogotaImg"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Bogota</h3>
+              <br />
+
+              <a
+                href="./busquedaViajes.html"
+                class="btn btn-primary"
+                id="buscarCardCartagena"
+                >Buscar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row conductor">
+        <div class="col-12 d-flex justify-content-center">
+          <nav class="navbar navbar-light" id="navConductor">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="./imagenes/manubrio.png"
+                  width="60"
+                  height="50"
+                  alt=""
+                  id="manubrioImg"
+                />
+              </a>
+              <div class="collapse navbar-collapse"></div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-e"></ul>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item" id="numeroItems">
+                  <h4 id="serConductor">¿Quieres ser conductor?</h4>
+                </li>
+                <li class="nav-item" id="numeroItems">
+                  <button
+                    class="navbar brand"
+                    id="btnConductor"
+                    onclick="location.href='./crearConductor.html';"
+                  >
+                    Si
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <hr />
+
+    <div class="modal fade" id="modalInicio" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Bienvenido a tu próximo viaje</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="validationCustom02" id="correoModal">Correo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="correoId"
+              placeholder="Correo@hotmail.com"
+              required
+            />
+
+            <label for="validationCustom03" id="contraseñaModal"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="contraseñaId"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  data-dismiss="modal"
+                  id="btnModalInicio"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalRegistrar" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Crea tu cuenta</h5>
+            <h5 style="text-align: right;" id="nombreModal">&nbsp &nbsp &nbsp TeLlevo.com</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="validationCustom03" id="nombreModal">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="Nombre"
+              required
+            />
+            <label for="validationCustom03" id="celularModal">Celular</label>
+            <input
+              type="number"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="Celular"
+              required
+            />
+            <label for="validationCustom03" id="correoModal">Correo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="correoIdRegistro"
+              placeholder="Correo@hotmail.com"
+              required
+            />
+
+            <label for="validationCustom03" id="contraseñaModal"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="contraseñaIdRegistro"
+              placeholder="Contraseña"
+              required
+            />
+            <label for="validationCustom03" id="edadModal">Edad</label>
+            <input
+              type="number"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="Celular"
+              required
+            />
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-12">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  data-dismiss="modal"
+                  id="btnModalRegistrar"
+                >
+                  Registarse
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p
+        id="pFooter"
+        style="text-align: center; font-weight: bold; background-color: #ffe999"
+      >
+        Contacto:info@tellevo.com<br />
+        Bogota, Colombia <br />
+        Cra 43 # 100 -21
+      </p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

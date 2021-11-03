@@ -19,7 +19,7 @@ router.get("/", checkToken, function (req, res) {
   }
 });
 
-router.post("/", checkToken, function (req, res) {
+router.post("/", function (req, res) {
   const { error } = validacion(req.body);
 
   if (error) {

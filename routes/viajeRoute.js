@@ -16,7 +16,7 @@ const schema = Joi.object({
 });
 
 //GET all Viajes
-router.get("/", checkToken, function (req, res) {
+router.get("/", function (req, res) {
   Viaje.findAll().then((result) => res.send(result));
 });
 

@@ -38,7 +38,7 @@ router.post("/", function (req, res) {
 });
 
 //Update
-router.put("/:id", checkToken, (req, res) => {
+router.put("/:id", (req, res) => {
   const { error } = validate(req.body);
 
   if (error) {

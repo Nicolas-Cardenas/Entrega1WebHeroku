@@ -77,6 +77,7 @@ const validate = (vehiculo) => {
     tipo: Joi.string().required(),
     modelo: Joi.string().required(),
     foto: Joi.string().required(),
+    ConductorId: Joi.number(),
   });
 
   return schema.validate(vehiculo);

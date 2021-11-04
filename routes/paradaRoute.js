@@ -10,6 +10,7 @@ const schema = Joi.object({
   direccion: Joi.string().min(1).required(),
   coordenadaX: Joi.number().required(),
   coordenadaY: Joi.number().required(),
+  ViajeId: Joi.number(),
 });
 
 //GET all Paradas

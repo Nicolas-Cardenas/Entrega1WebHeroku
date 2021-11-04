@@ -25,7 +25,9 @@ Viaje.hasMany(Reserva);
 Viaje.hasMany(Pasajero);
 Viaje.hasOne(MapaTrayecto);
 Viaje.hasOne(Conductor);
-Viaje.hasMany(Parada);
+Viaje.hasMany(Parada, {
+  foreignKey: "ViajeId",
+});
 Viaje.hasMany(Mensaje, {
   foreignKey: "ViajeId",
 });
@@ -43,7 +45,9 @@ Pasajero.hasOne(Calificacion, {
 
 // Relaciones de Conductor
 Conductor.belongsTo(Viaje);
-Conductor.hasOne(Vehiculo);
+Conductor.hasOne(Vehiculo, {
+  foreignKey: "ConductorId",
+});
 Conductor.hasOne(Calificacion, {
   foreignKey: "ConductorId",
 });

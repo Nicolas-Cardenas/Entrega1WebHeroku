@@ -13,7 +13,7 @@ const schema = Joi.object({
   terminado: Joi.boolean().required(),
   numCupos: Joi.number().required(),
   lleno: Joi.boolean().required(),
-  conductor: Joi.number().required(),
+  driver: Joi.number().required(),
 });
 
 //GET all Viajes

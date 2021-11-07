@@ -33,8 +33,8 @@ Viaje.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    conductor: {
-      type: DataTypes.FLOAT,
+    driver: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

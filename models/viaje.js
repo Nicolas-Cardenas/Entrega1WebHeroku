@@ -33,7 +33,7 @@ Viaje.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    ConductorId: {
+    conductorId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

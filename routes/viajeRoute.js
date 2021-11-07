@@ -33,8 +33,8 @@ router.get("/:id", checkToken, function (req, res) {
 });
 
 //GET Viaje por id
-router.get("/:ConductorId", checkToken, function (req, res) {
-  Viaje.findByPk(req.params.ConductorId).then((response) => {
+router.get("/:conductor", checkToken, function (req, res) {
+  Viaje.findByPk(req.params.conductor).then((response) => {
     if (response === null) {
       return res
         .status(404)

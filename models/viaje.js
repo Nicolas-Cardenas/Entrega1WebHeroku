@@ -33,6 +33,10 @@ Viaje.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    conductor: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
   },
   {
     sequelize,

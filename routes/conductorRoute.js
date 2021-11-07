@@ -41,12 +41,6 @@ router.get("/:id", checkToken, (req, res) => {
 });
 
 router.put("/:id", checkToken, (req, res) => {
-  const { error } = validacion(req.body);
-
-  if (error) {
-    return res.status(400).send(error);
-  }
-
   Conductor.update(req.body, { where: { id: req.params.id } }).then(
     (response) => {
       if (response[0] !== 0) {

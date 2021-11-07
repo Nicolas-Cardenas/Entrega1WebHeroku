@@ -32,6 +32,18 @@ router.get("/:id", checkToken, function (req, res) {
   });
 });
 
+//GET Viaje por id
+router.get("/:ConductorId", checkToken, function (req, res) {
+  Viaje.findByPk(req.params.ConductorId).then((response) => {
+    if (response === null) {
+      return res
+        .status(404)
+        .send("El viaje con el ID indicado no fue encontrado.");
+    }
+    res.send(response);
+  });
+});
+
 //POST create Viaje
 router.post("/", checkToken, function (req, res) {
   const { error } = schema.validate(req.body);

@@ -44,9 +44,7 @@ Pasajero.hasOne(Calificacion, {
 });
 
 // Relaciones de Conductor
-Conductor.belongsTo(Viaje, {
-  foreignKey: "ConductorId",
-});
+Conductor.belongsTo(Viaje);
 Conductor.hasOne(Vehiculo, {
   foreignKey: "ConductorId",
 });

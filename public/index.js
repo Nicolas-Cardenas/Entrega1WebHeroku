@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import Perfil from "./components/perfil.js";
-import Registrar from "./registrarConductor";
+import Registrar from "./src/components/registrarConductor";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import Perfil from "./perfil";
-import CrearViaje from "./crearViaje";
-import RegistrarVehiculo from "./registrarVehiculo";
-import Screen from "./mainScreen/screen";
-import ModificarVehiculo from "./modificarVehiculo";
-import BuscarViajes from "./buscarViajes";
-import Footer from "./footer";
-import HeaderScreen from "./mainScreen/headerScreen";
-import VerViajesConductor from "./verViajesConductor";
-import DetalleViaje from "./detalleViaje";
+import Perfil from "./src/components/perfil";
+import CrearViaje from "./src/components/crearViaje";
+import RegistrarVehiculo from "./src/components/registrarVehiculo";
+import Screen from "./src/components/mainScreen/screen";
+import ModificarVehiculo from "./src/components/modificarVehiculo";
+import BuscarViajes from "./src/components/buscarViajes";
+import Footer from "./src/components/footer";
+import HeaderScreen from "./src/components/mainScreen/headerScreen";
+import VerViajesConductor from "./src/components/verViajesConductor";
+import DetalleViaje from "./src/components/detalleViaje";
 
 ReactDOM.render(
   <div>

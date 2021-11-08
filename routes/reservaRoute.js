@@ -75,7 +75,7 @@ router.delete("/:id", checkToken, (req, res) => {
 
 const schema = Joi.object({
   codigo: Joi.string().min(3).max(15).required(),
+  ViajeId: Joi.number(),
 });
-
 
 module.exports = router;

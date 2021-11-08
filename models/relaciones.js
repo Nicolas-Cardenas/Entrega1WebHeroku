@@ -21,7 +21,9 @@ Reserva.belongsTo(Viaje);
 MapaTrayecto.belongsTo(Viaje);
 
 // Relaciones de Viaje
-Viaje.hasMany(Reserva);
+Viaje.hasMany(Reserva, {
+  foreignKey: "ViajeId",
+});
 Viaje.hasMany(Pasajero);
 Viaje.hasOne(MapaTrayecto);
 Viaje.hasOne(Conductor);
